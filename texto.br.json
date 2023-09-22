@@ -1,0 +1,34 @@
+{
+	"mes":
+	[
+		[1,"jan","janeiro","jneiro","janiro","janeir","janero"],
+		[2,"fev","fevereiro","fevreiro","feveriro","vefereiro"],
+		[3,"mar","março","marco","marso","maço","marxo","narço"],
+		[4,"abr","abril","abil","abriu","bril"],
+		[5,"mai","maio","aio","mai"],
+		[6,"jun","junho","juho","juho","jun"],
+		[7,"julh","julho","juho","juho"],
+		[8,"ago","agosto","agoto","agsto","gosto"],
+		[9,"set","setembro","setmro"],
+		[10,"out","outbro","out","outubro"],
+		[11,"nov","novembr","novembro","novembro"],
+		[12,"dez","dezembro","dezembo","dezmbro"]
+	],
+	"semana":
+	[
+		[1,"segunda"],
+		[2,"terça","terca"],
+		[3,"quarta"],
+		[4,"quinta"],
+		[5,"sexta"],
+		[6,"sabado"],
+		[7,"domingo"]
+	],
+	"dia":
+	[
+		[0,"dia"],
+		[1,"hoje"],
+		[2,"ontem"],
+		[2,"amanha"]
+	]
+}
