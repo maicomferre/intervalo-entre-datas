@@ -21,20 +21,18 @@ datai hoje 10/05/2000
 
 ```
 
+```
 O retorno devera ser:
 
-``
 Intervalo entre 10/05/2000 e 22/09/2023:
 	Anos: 23 anos
 	Meses: 4 meses
 	Dias: 20 dias
---------------------------------------------------
 	Totais: 
 		Dias: 8,535
 		Horas: 204,840
 		Minutos: 12,290,400
-
-``
+```
 
 
 ### Intervalo entre duas datas ###
