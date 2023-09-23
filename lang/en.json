@@ -1,0 +1,34 @@
+{
+	"mes":
+	[
+		[1,"jan","january"],
+		[2,"feb","february"],
+		[3,"mar","march"],
+		[4,"apr","april"],
+		[5,"mai","may"],
+		[6,"jun","june"],
+		[7,"jul","july"],
+		[8,"aug","august"],
+		[9,"sep","september"],
+		[10,"out","october"],
+		[11,"nov","november"],
+		[12,"dez","december"]
+	],
+	"semana":
+	[
+		[1,"monday"],
+		[2,"tuesday"],
+		[3,"wednesday"],
+		[4,"thursday"],
+		[5,"friday"],
+		[6,"saturday"],
+		[7,"sunday"]
+	],
+	"dia":
+	[
+		[0,"day"],
+		[1,"today"],
+		[2,"yesterday"],
+		[2,"tomorrow"]
+	]
+}

@@ -5,7 +5,7 @@ from dateutil.relativedelta import relativedelta
 import traceback
 
 debug = False
-definicoes = 'texto.br.json'
+definicoes = 'lang/en.json'
 
 
 class Data:
@@ -63,17 +63,20 @@ class Data:
 							if dados in dia:
 								depende_de_parametros.append(dados)
 								dados = None
-								continue
 
 						if dados == None:
 							continue
 
-						for x in dados:
-							if(self.data_valida(x) == False):
-								print("A data {data} não é válida!".format(data=x))
-								raise Exception("Data gerada pelo programa inválida!")
-							else:
-									data.append(x)
+						if type(dados) != str:
+							for x in dados:
+								if(self.data_valida(x) == False):
+									print("A data {data} não é válida!".format(data=x))
+									raise Exception("Data gerada pelo programa inválida!")
+								else:
+										data.append(x)
+						else:
+							naodata.append(dados)
+
 					except Exception as e:
 						if debug == True:
 							print("[class=Data][__init__] Erro: ",e)
@@ -157,7 +160,8 @@ class Data:
 
 
 	def calcula_intervalo(self,datas,retorno=False):
-		if len(datas) == 2:
+		xlen = len(datas)
+		if xlen == 2:
 			data1 = "-".join(map(str,datas[0]))
 			data2 = '-'.join(map(str,datas[1]))
 			d1 = datetime.strptime(data1,"%d-%m-%Y")
@@ -172,14 +176,13 @@ class Data:
 				self.explicar_intervalo(d1,d2,d3)
 			else:
 				return d3
-		elif len(datas) > 2:
+		elif xlen > 2:
 			intervalos = Data
 			for x in datas:	
 				d =  "-".join(map(str,x))
 				d1 = datetime.strptime(d,"%d-%m-%Y")
 
 				intervalos = intervalos + d1
-
 
 			print(intervalos)
 
@@ -248,9 +251,26 @@ class Data:
 				r = [t,h]
 
 			elif chave == 'semana':
+				print("Ações: Obter dia da semana e calcular intervalo\nentre a data atual e a semana indicada.")
+				print("Mas eu ainda não faço isso :/")
 				pass
 			elif 'dia' in chave:
-				r = [t]
+				nova_data = now
+				for x in opcao:
+					if x.isnumeric():
+						if int(x) > nova_data.day:
+							print("O dia especificado é maior que o de hoje, então vou mostrar o do mes que vem.")
+							if nova_data.month == 12:
+								nova_data.month = 1
+								nova_data.year += 1
+								print(f"O mes que vem é janeiro de {nova_data.year}")
+							else:
+								nova_data.month += 1
+								print("Mes que vem é {}".format(nova_data.month))
+
+
+				h = [int(x),nova_data.month,nova_data.year]
+				r = [chave,h]
 
 		except Exception as e:
 			if debug == True:
